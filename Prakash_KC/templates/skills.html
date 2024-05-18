@@ -1,0 +1,38 @@
+{% extends 'includes/base.html' %} 
+{% load static %} {% block content %}
+
+<!--- #SKILLS -->
+
+<section class="section skills" id="skills">
+  <div class="container">
+    <br>
+    <p class="section-subtitle">My Skills</p>
+
+    <h2 class="h2 section-title">I Develop Skills Regularly</h2>
+
+    <p class="section-text">
+      Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen
+      derit in voluptate
+    </p>
+
+    <ul class="skills-list">
+      {% for skill in skills %}
+      <li class="skills-item">
+        <div class="wrapper" style="width: 100%">
+          <h3 class="skills-title">{{ skill.title }}</h3>
+
+          <data class="skills-data" value="100">{{ skill.percentage }}%</data>
+        </div>
+
+        <div class="skills-progress-box">
+          <div class="skills-progress" style="width: {{ skill.percentage }}%"></div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<BR><BR><BR><BR><BR><BR><BR><BR>
+
+{% endblock content %}

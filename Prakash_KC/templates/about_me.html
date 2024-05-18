@@ -1,0 +1,62 @@
+{% extends 'includes/base.html' %} {% load static %} {% block content %}
+
+<!--- #ABOUT -->
+
+<section class="section about" id="about">
+  <div class="container">
+    <figure class="about-banner">
+      {% if user.userprofile.image %}
+      <img
+        src="{{user.userprofile.image1.url}}"
+        width="800"
+        height="652"
+        loading="lazy"
+        alt="Photo"
+        class="img-cover" />
+        <img
+        src="{{user.userprofile.image2.url}}"
+        width="800"
+        height="717"
+        loading="lazy"
+        alt="Photo"
+        class="abs-img" />
+        {% endif %}
+        
+      <div class="abs-icon abs-icon-1">
+        <ion-icon name="logo-css3"></ion-icon>
+      </div>
+
+      <div class="abs-icon abs-icon-2">
+        <ion-icon name="logo-javascript"></ion-icon>
+      </div>
+
+      <div class="abs-icon abs-icon-3">
+        <ion-icon name="logo-angular"></ion-icon>
+      </div>
+    </figure>
+
+    <div class="about-content">
+      <p class="section-subtitle">I'm a Developer</p>
+      <h2 class="h2 section-title">I Develop Application that Help People</h2>
+
+      <p class="section-text">
+        {% if user.userprofile.name %} {{user.userprofile.name}} {% endif %}
+      </p>
+
+      <p class="section-text">
+        {% if user.userprofile.bio %} {{user.userprofile.bio}} {% endif %}
+      </p>
+
+      <a href="{% url 'portfolio'%}" class="btn btn-primary blue"
+        >View Portfolio</a>
+      <div class="social-icons">
+        <a href="{{user.userprofile.facebook}}" target="{{user.userprofile.facebook}}"><i class="fab fa-facebook-f"></i></a>
+        <a href="{{user.userprofile.twitter}}" target="{{user.userprofile.twitter}}"><i class="fab fa-twitter"></i></a>
+        <a href="{{user.userprofile.instagram}}" target="{{user.userprofile.instagram}}"><i class="fab fa-instagram"></i></a>
+        <a href="{{user.userprofile.linkedin}}" target="{{user.userprofile.linkedin}}k"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

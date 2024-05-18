@@ -1,0 +1,52 @@
+
+python.exe -m pip install --upgrade pip 			(pip upgrade)
+pip install virtualenv
+virtualenv env
+env\scripts\activate
+pip freeze > requirements.txt		(pip install -r requirements.txt)
+pip install Django
+django-admin startproject Prakash-KC
+cd Prakash-KC
+python manage.py startapp Portfolio
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+
+create folder templates
+create folder static
+                    CSS
+                    js
+                    image
+
+
+Setting.py Setting
+
+import os
+
+INSTALLED _APPS 
+    app name add
+
+templates dirs
+[BASE_DIR / 'templates']
+
+
+STATIC_URL = 'static/'
+STATIC_ROOT= os.path.join(BASE_DIR,"Static/images")
+STATICFILES_DIRS = [
+    BASE_DIR/'static',
+]
+
+favicon
+<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.jpg' %}" >
+
+
+CSS
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+JS
+<script type="text/javascript" src="{% static "js/my_external_script.js" %}"></script>
+
+IMAGE
+<img src="{% static 'img/logo.png' %}" class="logo" alt="">				(pip install pillow)
+

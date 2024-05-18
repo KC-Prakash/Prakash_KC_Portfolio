@@ -1,0 +1,22 @@
+{% extends 'includes/base.html' %}
+{% load static %} {% block content %}
+
+<!--- #PORTFOLIO DETAILS -->
+
+<br><br>
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <ul class="portfolio-list">
+
+      <li>
+        <a href="#" class="portfolio-card" style="background-image: url('{{ project.image.url }}')">
+        </a>
+        <div class="card-content"><br>
+          <h3 class="h3 card-title">{{ project.title }}</h3>
+          {{ project.description|safe }}
+        </div>
+      </li>
+    </ul>
+</section>
+
+{% endblock content %}

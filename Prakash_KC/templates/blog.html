@@ -1,0 +1,47 @@
+{% extends 'includes/base.html' %}
+{% load static %} {% block content %}
+
+<!--- #BLOG -->
+
+<section class="section blog" id="blog">
+  <div class="container">
+    <br>
+    <p class="section-subtitle">Latest News</p>
+
+    <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
+
+    <p class="section-text">
+      Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehen derit in voluptate
+    </p>
+
+    <ul class="blog-list">
+      {% for blogproject in blogprojects %}
+      <li>
+        
+        <div class="blog-card">
+
+          <figure class="card-banner">
+            <a href="{% url 'blog_detail' pk=blogproject.pk %}">{{ blogproject.title }}
+              <img src={{ blogproject.image.url }} width="1181" height="843" loading="lazy"
+                alt="Jim Morisson Says when the musics over turn off the light" class="img-cover">
+            </a>
+          </figure>
+
+          <a href="{{ blogproject.image.url }}" class="card-tag">{{ blogproject.title }}</a>
+
+          <h3 class="card-title">
+            <a href="#">Jim Morisson Says when the musics over turn off the light</a>
+          </h3>
+
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</section>
+
+</article>
+</main>
+
+{% endblock content %}

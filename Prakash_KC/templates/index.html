@@ -1,0 +1,67 @@
+{% extends 'includes/base.html' %} 
+{% load static %} {% block content %}
+
+<!--- #HERO  -->
+
+<main>
+  <article>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-banner">
+          <img
+          {% if user.userprofile.image %}
+            src="{{user.userprofile.image.url}}"
+            width="800"
+            height="864"
+            loading="lazy"
+            alt="Photo"
+            class="img-cover"/>
+            {% endif %}
+
+          <div class="elem elem-1">
+            <p class="elem-title">01</p>
+
+            <p class="elem-text">Years of Success</p>
+          </div>
+
+          <div class="elem elem-2">
+            <p class="elem-title">01+</p>
+
+            <p class="elem-text">Projects Completed</p>
+          </div>
+
+          <div class="elem elem-3">
+            <ion-icon name="trophy"></ion-icon>
+          </div>
+
+          <img
+            src="{% static 'images/rotate-img.png' %}"
+            width="169"
+            height="172"
+            alt="I'm beginner web developer"
+            class="rotate-img"/>
+        </div>
+
+        <div class="hero-content">
+          <h2 class="hero-title">
+            <span>Hello I'm</span>
+            <strong>{% if user.userprofile.name %} {{user.userprofile.name}} {% endif %}</strong> Web Developer from New York
+          </h2>
+
+          <p class="hero-text">
+            Adipisicing elit. Neque nulla voluptatum eos repellat deserunt
+            nesciunt tempore porro totam.
+          </p>
+
+          <div class="btn-group">
+            <a href="{% url 'contact'%}" class="btn btn-primary blue">Get a Quote</a>
+
+            <a href="{% url 'about_me'%}" class="btn">About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+{% endblock content %}
